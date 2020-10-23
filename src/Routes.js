@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
@@ -68,7 +68,7 @@ const Routes = () => {
   };
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Nav cartItemCount={cartItemCount} />
       <div className="background">
         <main className="content-container">
@@ -89,7 +89,7 @@ const Routes = () => {
         </main>
         <Modal modalState={modalState} handleModal={handleModal} />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
