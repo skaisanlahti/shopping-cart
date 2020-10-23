@@ -1,20 +1,154 @@
 .top-bar-bg {
+  position: absolute;
   overflow: hidden;
+  z-index: 100;
+  top: 0;
   width: 100%;
-  background-color: hsl(0, 0%, 50%);
+  background-color: hsl(0, 0%, 90%);
+  color: hsl(0, 0%, 10%);
 }
+
 .top-bar {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
+  align-items: center;
 }
+
 .navigation {
   display: flex;
 }
+
 .nav-item {
+  color: hsl(0, 0%, 10%);
+}
+
+.logo {
+  font: 36px georgia;
+  padding: 30px;
+  text-decoration: none;
+  color: hsl(220, 50%, 45%);
+}
+
+.nav-item {
+  position: relative;
+  padding: 30px;
+  font: 24px arial;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  color: hsl(220, 50%, 55%);
+  bottom: 2px;
+}
+
+.nav-item:active {
+  color: hsl(220, 50%, 35%);
+  bottom: 2px;
+}
+
+.top-cart {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  padding: 30px;
+  font: 24px arial;
+  text-decoration: none;
+}
+
+.cart-link {
+  position: relative;
+  font: 24px arial;
+  text-decoration: none;
+  color: hsl(220, 50%, 45%);
+}
+
+.cart-link:hover {
+  bottom: 2px;
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 160px;
+  margin-bottom: 100px;
+}
+
+.shop-container,
+.cart-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.shop-item,
+.cart-item {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 3px 10px hsla(0, 0%, 10%, 30%);
+}
+
+.shop-item > *,
+.cart-item > * {
+  margin: 20px;
+}
+
+.modal {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 300px;
+  background-color: hsla(0, 0%, 0%, 50%);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px;
+  background-color: white;
   padding: 30px;
 }
 
-.shop-container {
-  display: grid;
-  grid-template-columns: repeat(autofit, 1fr);
+.image-frame {
+  height: 100px;
+}
+
+img {
+  height: 100%;
+}
+
+.home {
+  font-size: 24px;
+}
+.home h1 {
+  font-size: 48px;
+}
+
+button {
+  font: 16px arial;
+  padding: 10px 20px;
+  margin: 5px;
+  border-top: 2px solid hsl(220, 50%, 75%);
+  border-left: 2px solid hsl(220, 50%, 75%);
+  border-right: 2px solid hsl(220, 50%, 45%);
+  border-bottom: 2px solid hsl(220, 50%, 45%);
+  border-radius: 5px;
+  background-color: hsl(220, 50%, 55%);
+  color: white;
+}
+
+button:active {
+  border-top: 2px solid hsl(220, 50%, 45%);
+  border-left: 2px solid hsl(220, 50%, 45%);
+  border-right: 2px solid hsl(220, 50%, 75%);
+  border-bottom: 2px solid hsl(220, 50%, 75%);
 }

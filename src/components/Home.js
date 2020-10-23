@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Home(props) {
   return (
-    <div>
+    <div className="home">
       <h1>Welcome!</h1>
       <Link to="/shop">Buy stuff at our shop!</Link>
     </div>

@@ -1,23 +1,38 @@
 import React from "react";
-import uniqid from "uniqid";
 
 function Cart(props) {
+  const total = props.cartItems.reduce((total, current) => {
+    return total + current.count * current.price;
+  }, 0);
+
+  if (props.cartItems.length > 0) {
+    return (
+      <div className="cart-container">
+        {props.cartItems.map((item) => {
+          return (
+            <div className="cart-item" key={item.id}>
+              <div className="image-frame">
+                <img src={item.image} alt={item.name} />
+              </div>
+              <div>
+                <p>Name: {item.name}</p>
+                <p>Price: {item.price} gil</p>
+                <p>Quantity: {item.count}</p>
+                <button data-id={item.id} onClick={props.handleDeleteFromCart}>
+                  Delete
+                </button>
+              </div>
+            </div>
+          );
+        })}
+        <p>Total: {total} gil</p>
+        <button>Checkout</button>
+      </div>
+    );
+  }
   return (
     <div>
-      <h1>Render cart items here</h1>
-      {props.cartItems.map((item) => {
-        return (
-          <div key={item.id}>
-            <div>{props.catalog[item.id].image}</div>
-            <p>Name: {props.catalog[item.id].name}</p>
-            <p>Price: {props.catalog[item.id].price}</p>
-            <p>Quantity: {item.count}</p>
-            <button data-id={item.id} onClick={props.handleDeleteFromCart}>
-              Delete
-            </button>
-          </div>
-        );
-      })}
+      <p>Your shopping cart is empty.</p>
     </div>
   );
 }

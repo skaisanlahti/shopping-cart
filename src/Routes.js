@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import uniqid from "uniqid";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
 import Cart from "./components/Cart";
+import Modal from "./components/Modal";
 import catalog from "./components/catalog";
 
 const Routes = () => {
   const [cartItems, setCartItems] = useState([]);
   const [cartItemCount, setCartItemCount] = useState(0);
+  const [modalState, setModalState] = useState("closeModal");
 
   const handleAddToCart = (event) => {
-    const id = event.target.dataset.id;
+    const { id, name, price, image } = event.target.dataset;
     const count = parseInt(event.target.dataset.count);
+    console.log(`id: ${id} count: ${count}`);
     let array = cartItems;
     if (count === 0) {
       return;
@@ -33,15 +35,20 @@ const Routes = () => {
     } else {
       const cartItem = {
         id: id,
+        image: image,
+        name: name,
+        price: price,
         count: count,
       };
       setCartItems(array.concat(cartItem));
     }
     setCartItemCount(cartItemCount + count);
+    setModalState("addItemModal");
   };
 
   const handleDeleteFromCart = (event) => {
     const deleteId = event.target.dataset.id;
+    console.log(`deleteId: ${deleteId}`);
     let deleteCount;
     let array = cartItems;
     for (let i = 0; i < array.length; i++) {
@@ -52,33 +59,36 @@ const Routes = () => {
     }
     setCartItems(array);
     setCartItemCount(cartItemCount - deleteCount);
+    setModalState("removeItemModal");
   };
 
-  const checkCart = () => {
-    console.table(cartItems);
+  const handleModal = (event) => {
+    const state = event.target.dataset.modal;
+    setModalState(state);
   };
 
   return (
     <BrowserRouter>
       <Nav cartItemCount={cartItemCount} />
-      <main>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/shop">
-            <Shop catalog={catalog} handleAddToCart={handleAddToCart} />
-          </Route>
-          <Route exact path="/cart">
-            <Cart
-              catalog={catalog}
-              cartItems={cartItems}
-              handleDeleteFromCart={handleDeleteFromCart}
-            />
-          </Route>
-        </Switch>
-      </main>
-      <button onClick={checkCart}>Check Cart</button>
+      <div className="background">
+        <main className="content-container">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/shop">
+              <Shop catalog={catalog} handleAddToCart={handleAddToCart} />
+            </Route>
+            <Route exact path="/cart">
+              <Cart
+                cartItems={cartItems}
+                handleDeleteFromCart={handleDeleteFromCart}
+              />
+            </Route>
+          </Switch>
+        </main>
+        <Modal modalState={modalState} handleModal={handleModal} />
+      </div>
     </BrowserRouter>
   );
 };
