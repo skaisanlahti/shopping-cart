@@ -13,7 +13,7 @@
   </a>
 
   <p align="center">
-    Practice project for ReactJS following The Odin Project learning materials.
+    Basic e-commerce front-end for a shopping cart.
     <br />
     <a href="https://github.com/skaisanlahti/shopping-cart"><strong>Explore the docs »</strong></a>
     <br />
@@ -21,7 +21,6 @@
     <a href="https://skaisanlahti.github.io/shopping-cart/">View Demo</a>
     ·
     <a href="https://github.com/skaisanlahti/shopping-cart/issues">Report a Bug</a>
-    ·
   </p>
 </p>
 
@@ -42,7 +41,9 @@
 
 ## About The Project
 
-The project was made following along The Odin Project learning materials for ReactJS and the project instructions can be found [here](https://www.theodinproject.com/courses/javascript/lessons/shopping-chart). The project was created with create-react-app. Main points of learning were react-router-dom and managing state up and down the component hierarchy.
+This is a practice project for building a simple UI for an e-commerce front-end. Main points of learning were react-router-dom and managing state up and down the component hierarchy.
+
+The project was made following along The Odin Project learning materials for ReactJS and the project instructions can be found [here](https://www.theodinproject.com/courses/javascript/lessons/shopping-chart).
 
 ### Built With
 
