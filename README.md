@@ -18,11 +18,10 @@
     <a href="https://github.com/skaisanlahti/shopping-cart"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/skaisanlahti/shopping-cart">View Demo</a>
+    <a href="https://skaisanlahti.github.io/shopping-cart/">View Demo</a>
     ·
-    <a href="https://github.com/skaisanlahti/shopping-cart/issues">shopping-cartrt Bug</a>
+    <a href="https://github.com/skaisanlahti/shopping-cart/issues">Report a Bug</a>
     ·
-    <a href="https://github.com/skaisanlahti/shopping-cart/issues">Request Feature</a>
   </p>
 </p>
 
@@ -43,11 +42,11 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+The project was made following along The Odin Project learning materials for ReactJS and the project instructions can be found [here](https://www.theodinproject.com/courses/javascript/lessons/shopping-chart). The project was created with create-react-app. Main points of learning were react-router-dom and managing state up and down the component hierarchy.
 
 ### Built With
 
-- [ReactJS]()
+- [ReactJS](https://reactjs.org/)
 
 <!-- GETTING STARTED -->
 
@@ -56,8 +55,6 @@
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
 
 - npm
 
@@ -103,9 +100,8 @@ Project Link: [https://github.com/skaisanlahti/shopping-cart](https://github.com
 
 ## Acknowledgements
 
-- []()
-- []()
-- []()
+- [The Odin Project](https://www.theodinproject.com/)
+- [Final Fantasy XIV Database Images](https://eu.finalfantasyxiv.com/lodestone/playguide/db/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
